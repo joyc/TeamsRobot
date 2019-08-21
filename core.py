@@ -1,13 +1,11 @@
 # !/usr/bin/env python
 # coding=utf-8
+import os
 import configparser
 
 import pymsteams
 
-
-config = configparser.ConfigParser()
-config.read('config.ini')
-ACCESS_KEY = config['teamskey']['ACCESS_KEY']
+ACCESS_KEY = os.environ.get("ACCESS_KEY")
 
 def push_msg():
     """
